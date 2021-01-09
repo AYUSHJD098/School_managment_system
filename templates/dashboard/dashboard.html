@@ -1,0 +1,136 @@
+{%  extends 'dashboard/main.html' %}
+
+{% block content %}
+
+<style>
+    #logo{
+	}
+
+	body{
+		background-color: #ebeff5;
+	}
+
+
+	#total-orders{
+		background-color: #4cb4c7;
+	}
+
+
+	#orders-delivered{
+		background-color: #7abecc;
+	}
+
+	#orders-pending{
+		background-color: #7CD1C0;
+	}
+
+</style>
+
+<br>
+
+<div class="row">
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="total-orders">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Total Students</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ total_order }}577</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-delivered">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Present Teacher</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ delivered}}12</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="col">
+		<div class="col-md">
+			<div class="card text-center text-white  mb-3" id="orders-pending">
+			  	<div class="card-header">
+			  		<h5 class="card-title">Present Student</h5>
+			  	</div>
+			  	<div class="card-body">
+			    	<h3 class="card-title">{{ pending  }} 378</h3>
+			  	</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<br>
+
+<div class="row">
+	<div class="col-md-5">
+		<!-- <h5>CUSTOMERS:</h5> -->
+		<!-- <hr> -->
+		<div class="card card-body">
+            <a class="btn btn-primary  btn-sm btn-block" href="">Create Student</a>
+            <hr>
+			<table class="table table-sm">
+				<tr>
+					<th></th>
+					<th>Student's Name</th>
+					<th>Phone</th>
+				</tr>
+
+					{% for customer in customers %}
+						<tr>
+							<td><a class="btn btn-sm btn-info" href="">View</a></td>
+							<td>{{ customer.name}}</td>
+							<td>{{ customer.phone }}</td>
+						</tr>
+					{% endfor %}
+			
+		
+
+			</table>
+		</div>
+	</div>
+
+	<div class="col-md-7">
+		<div class="card card-body">
+		<h5>LAST 5 PERIODS</h5>
+		<hr>
+			<table class="table table-sm">
+				<tr>
+					<th>Periods</th>
+					<th>Date</th>
+					<th>Status</th>
+					<th>Class</th>
+					<th>Remove</th>
+				</tr>
+
+					{% for order in orders %}
+						<tr>
+							<td>{{ order.product }}</td>
+							<td>{{ order.date_created }}</td>
+							<td>{{ order.status }}</td>
+							<td><a class="btn btn-sm btn-info" href="">Update</a></td>
+							<td><a class="btn btn-sm btn-danger"  href="">Delete</a></td>
+						</tr>
+					{% endfor %}
+			
+		
+			
+				
+			</table>
+			</div>
+		</div>
+	</div>
+
+</div>
+
+{% endblock %}
