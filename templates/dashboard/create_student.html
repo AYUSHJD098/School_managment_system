@@ -1,0 +1,82 @@
+{% extends 'dashboard/main.html' %}
+
+{% block content %}
+
+
+<style>
+    #logo {}
+
+    body {
+        background-color: #ebeff5;
+    }
+</style>
+
+<div class="container">
+    <div class="card card-body">
+        <h2>Add Student</h2>
+        <hr>
+        <table class="table table-sm">
+            <form action="POST">
+                <br>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="exampleInputName">Name</label>
+                            <input type="name" class="form-control" id="name" aria-describedby="name-help"
+                                placeholder="Enter Name">
+                        </div>
+                    </td>
+
+                    <td>
+
+                        <div class="form-group">
+                            <label for="exampleInputName2">Father's Name</label>
+                            <input type="name" class="form-control" id="name-father" aria-describedby="name-help"
+                                placeholder="Enter Father's Name">
+                        </div>
+                    </td>
+
+                    <td>
+                        <div class="form-group">
+                            <label for="exampleInputName3">Mother's Name</label>
+                            <input type="name3" class="form-control" id="name-mother" aria-describedby="name-help"
+                                placeholder="Enter Mother's Name">
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="Addresss">Addresss</label>
+                            <textarea class="form-control" id="Adresss" rows="3"></textarea>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <label for="phone">Phone</label>
+                            <input type="phone" class="form-control" id="phone" aria-describedby="phone-help"
+                                placeholder="Enter Phone">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <label for="phone">Phone 2 (optional)</label>
+                            <input type="phone" class="form-control" id="phone" aria-describedby="phone-help"
+                                placeholder="Enter Phone">
+                        </div>
+                    </td>
+                </tr>
+
+
+
+        </table>
+        </form>
+    </div>
+
+</div>
+
+{% endblock %}
