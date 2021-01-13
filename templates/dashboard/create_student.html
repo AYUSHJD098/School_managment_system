@@ -20,7 +20,7 @@
         <h2>Add Student</h2>
         <hr>
         <table class="table table-sm">
-            <form action="POST">
+            <form action="POST" encrypt="multipart/form-data">
                 <br>
                 <tr>
                     <td>
@@ -99,9 +99,9 @@
                     <td>
                         <label for="class">Class admited to</label>
                         <select name="class" id="class">
-                            <option value="-3">Play-group</option>
-                            <option value="-2">Sr-KG</option>
-                            <option value="-1">Jr-KG</option>
+                            <option value="play">Play-group</option>
+                            <option value="senior">Sr-KG</option>
+                            <option value="junior">Jr-KG</option>
                             <option value="1">1st</option>
                             <option value="2">2nd</option>
                             <option value="3">3rd</option>

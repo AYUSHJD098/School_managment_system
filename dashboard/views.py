@@ -6,6 +6,7 @@ def dashboard(request):
     return render(request,'dashboard/dashboard.html')
 
 def create_student(request):
+    
     context = {'title' : "Create Student"}
     return render(request, 'dashboard/create_student.html')
 
